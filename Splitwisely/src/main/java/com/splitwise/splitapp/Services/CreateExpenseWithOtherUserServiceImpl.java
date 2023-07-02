@@ -56,8 +56,8 @@ public class CreateExpenseWithOtherUserServiceImpl implements CreateExpenseWithO
 
             Expense expense = new Expense();
             expense.setName(name);
-            System.out.println("name");
-            System.out.println(expense.getExpenseId());
+            // System.out.println("name");
+            // System.out.println(expense.getExpenseId());
             expense.setDescription(description);
             expense.setCreatedBy(createdBy);
             expense.setTotalAmount(amount);
@@ -69,9 +69,9 @@ public class CreateExpenseWithOtherUserServiceImpl implements CreateExpenseWithO
             expense.setDate(new Date());
             splitStrategyService.calculateOwnedAmount(expense,percentage,participantUsers);
             paymentStrategyService.calculatePaidAmount(expense,participantUsers);
-            System.out.println("sachin tiwari");
+            // System.out.println("vishnu jangid");
             expenseRepository.save(expense);
-            System.out.println("Expense added:");
+            // System.out.println("Expense added:");
             String response= tostring(expense);
             System.out.println(response);
             return response;

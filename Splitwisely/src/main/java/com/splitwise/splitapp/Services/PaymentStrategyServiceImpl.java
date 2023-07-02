@@ -17,10 +17,10 @@ public class PaymentStrategyServiceImpl implements PaymentStrategyService {
 		Double amountPaid = expense.getTotalAmount();
 		for(User participant : participants) {
 			if(participant.equals(payer)) {
-				System.out.println("Payer is :"+payer.getUserName()+" "+amountPaid);
+				// System.out.println("Payer is :"+payer.getUserName()+" "+amountPaid);
 				
 				expense.getAmountPaid().put(participant, amountPaid);
-				System.out.println("Amount === "+expense.getAmountPaid().get(payer));
+				// System.out.println("Amount === "+expense.getAmountPaid().get(payer));
 			}else {
 				expense.getAmountPaid().put(participant, 0.0);
 			}

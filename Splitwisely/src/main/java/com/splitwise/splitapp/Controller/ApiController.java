@@ -26,14 +26,14 @@ public class ApiController {
     @Autowired
     public CreateExpenseWithOtherUserService createExpenseWithOtherUserService;
     @GetMapping(value = "/authenticate")
-    public Map<String,String> verifyUser(@RequestParam("username") String userName,@RequestParam("password") String password){
-         return authenticationService.verify(userName,password);
+    public Map<String,String> verifyUser(@RequestParam("phonenumber") String phoneNumber,@RequestParam("password") String password){
+        return authenticationService.verify(phoneNumber,password);
     }
 
     @GetMapping(value = "")
     public Map<String,String> start(){
          Map<String,String> response= new HashMap<>();
-         response.put("Welcome to Splitwise app designed by Sachin", "Given Below Methods are allowed here");
+         response.put("Welcome to Splitwise app designed by Vishnu", "Given Below Methods are allowed here");
          response.put("/api/v1/authenticate", "To authenticate an user with phone number and password");
          response.put("/api/v1/register","To register an user with name,phoneNumber and password");
          response.put("/api/v1/expense-other-user", "To create an expense with other person and settle up ");
